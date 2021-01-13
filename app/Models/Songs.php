@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Playlists;
+use App\Models\User;
 
 class Songs extends Model
 {
     use HasFactory;
     public function playlist(){
 
-        return $this->belongsTo(Playlists::class);
+        return $this->belongsTo(User::class);
 
     }
 }

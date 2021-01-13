@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Song;
+use App\Models\Songs;
 
 class SongsController extends Controller
 {
@@ -24,7 +24,7 @@ class SongsController extends Controller
     {
 
         $this->validate($request, ['song_name' => 'required', 'artist' => 'required']);
-        $song = new Song();
+        $song = new Songs();
         $song->song_name = $request->song_name;
         $song->artist = $request->artist;
         $song->user_id = auth()->user()->id;
@@ -32,7 +32,7 @@ class SongsController extends Controller
         return redirect('/dashboard');
     }
 
-    public function edit(Song $song)
+    public function edit(Songs $song)
     {
 
         if (auth()->user()->id == $song->user_id) {
@@ -43,7 +43,7 @@ class SongsController extends Controller
         }
     }
 
-    public function update(Request $request, Song $song)
+    public function update(Request $request, Songs $song)
     {
         if (isset($_POST['delete'])){
 

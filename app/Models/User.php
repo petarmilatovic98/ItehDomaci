@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Playlists;
+use App\Models\Songs;
 
 class User extends Authenticatable
 {
@@ -60,9 +60,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function playlists(){
+    public function songs(){
 
-        return $this->hasMany(Playlists::class);
+        return $this->hasMany(Songs::class);
 
     }
 

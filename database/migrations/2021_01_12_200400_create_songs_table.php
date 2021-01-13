@@ -18,7 +18,7 @@ class CreateSongsTable extends Migration
             $table->timestamps();
             $table->string('song_name');
             $table->string('artist');
-            $table->integer('list_id')->unsignedd()->index();
+            $table->integer('user_id')->unsignedd()->index();
         });
     }
 
