@@ -26,6 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::post('/song', [SongsController::class,'create']);
 
         Route::get('/song/{song}', [SongsController::class,'edit']);
-        Route::post('/song/{song}', [SongsController::class,'update']);
+        Route::put('/song/{song}', [SongsController::class,'update']);
+
 
 });
